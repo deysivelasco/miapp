@@ -46,7 +46,9 @@ child:  Center(
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
       nombre(),
-      cargoUsuario()
+      cargoUsuario(),
+      campocontrasena(),
+      botonEntrar()
     ],
   ),
 ),
@@ -60,12 +62,37 @@ Widget nombre(){
 }
 
 Widget cargoUsuario(){
-  return const TextField(
+  return Container(
+    padding:const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+    child: const TextField(
     decoration: InputDecoration(
       hintText: "User",
       fillColor: Colors.white,
       filled: true,
-
      ),
-  );
+  ));
+}
+
+
+
+Widget campocontrasena(){
+  return Container(
+    padding:const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+    child: const TextField(
+     obscureText: true,
+     decoration: InputDecoration(
+      hintText: "Password",
+      fillColor: Colors.white,
+      filled: true,
+     ),
+  ));
+}
+
+Widget botonEntrar(){
+  // ignore: deprecated_member_use
+  return FlatButton(
+    onPressed: (){
+  },
+    child: const Text("Enter")
+     );
 }
