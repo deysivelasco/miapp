@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return  const MaterialApp(
       title: "Mi App",
       home:Inicio(), 
     );
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class Inicio extends StatefulWidget {
-  Inicio({Key? key}) : super(key: key);
+  const Inicio({Key? key}) : super(key: key);
 
   @override
   _InicioState createState() => _InicioState();
@@ -30,7 +30,21 @@ class _InicioState extends State<Inicio> {
   appBar: AppBar(
     title: const Text("Mi App"),
   ),
-   body: Text("contenido")
-    );
+   body: cuerpo(),
+   );
   }
+}
+
+
+Widget cuerpo(){
+return Container(
+  decoration: const BoxDecoration(
+  image: DecorationImage(image: NetworkImage("https://i.pinimg.com/originals/8d/ea/be/8deabe5804d6e9614560f1e07c16d71a.jpg"),
+  fit: BoxFit.cover
+  
+  )
+  ),
+child: const Center(child: Text("Hola mundo")
+),
+);
 }
