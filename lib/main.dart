@@ -27,10 +27,7 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
-  appBar: AppBar(
-    title: const Text("Mi App"),
-  ),
-   body: cuerpo(),
+     body: cuerpo(),
    );
   }
 }
@@ -44,7 +41,31 @@ return Container(
   
   )
   ),
-child: const Center(child: Text("Hola mundo")
+child:  Center(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      nombre(),
+      cargoUsuario()
+    ],
+  ),
 ),
 );
+}
+
+
+Widget nombre(){
+  return const Text("Sign in",style: TextStyle(color: Colors.white,fontSize: 35.0, fontWeight: FontWeight.bold),
+  );
+}
+
+Widget cargoUsuario(){
+  return const TextField(
+    decoration: InputDecoration(
+      hintText: "User",
+      fillColor: Colors.white,
+      filled: true,
+
+     ),
+  );
 }
