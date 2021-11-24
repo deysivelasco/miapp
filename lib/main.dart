@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miapp/Pages/pagina_02_.dart';
 
 void main() => runApp(const MyApp());
 
@@ -27,13 +28,13 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
-     body: cuerpo(),
+     body: cuerpo(context),
    );
   }
 }
 
 
-Widget cuerpo(){
+Widget cuerpo(context){
 return Container(
   decoration: const BoxDecoration(
   image: DecorationImage(image: NetworkImage("https://i.pinimg.com/originals/8d/ea/be/8deabe5804d6e9614560f1e07c16d71a.jpg"),
@@ -49,7 +50,7 @@ child:  Center(
       cargoUsuario(),
       campocontrasena(),
       const SizedBox(height: 20,),
-      botonEntrar()
+      botonEntrar(context)
     ],
   ),
 ),
@@ -89,15 +90,18 @@ Widget campocontrasena(){
   ));
 }
 
-Widget botonEntrar(){
+Widget botonEntrar(context){
   return ElevatedButton(
     style: ElevatedButton.styleFrom(primary: Colors.blue, 
     onPrimary: Colors.white,
     padding: const EdgeInsets.symmetric(horizontal:100, vertical:10), 
     ), 
-    onPressed: ()=>{
-    print: (("Presionaste el boton"))
+    child: const Text("Entrar"),
+    onPressed: (){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> const Pagina02() ),);
+    
+    
   },
-    child: const Text("Entrar")
+    
      );
 }//<Widget>[]
