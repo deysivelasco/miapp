@@ -89,8 +89,11 @@ Widget campocontrasena(){
 }
 
 Widget botonEntrar(){
-  // ignore: deprecated_member_use
-  return FlatButton(
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(primary: Colors.blue, 
+    onPrimary: Colors.white,
+    padding: const EdgeInsets.symmetric(horizontal:100, vertical:10), 
+    ),
     onPressed: (){
   },
     child: const Text("Enter")
