@@ -48,6 +48,7 @@ child:  Center(
       nombre(),
       cargoUsuario(),
       campocontrasena(),
+      const SizedBox(height: 20,),
       botonEntrar()
     ],
   ),
