@@ -94,9 +94,10 @@ Widget botonEntrar(){
     style: ElevatedButton.styleFrom(primary: Colors.blue, 
     onPrimary: Colors.white,
     padding: const EdgeInsets.symmetric(horizontal:100, vertical:10), 
-    ),
-    onPressed: (){
+    ), 
+    onPressed: ()=>{
+    print: (("Presionaste el boton"))
   },
-    child: const Text("Enter")
+    child: const Text("Entrar")
      );
-}
+}//<Widget>[]
