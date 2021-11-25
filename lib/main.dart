@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:miapp/Pages/pagina_02_.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp( MyApp());
 
 class MyApp extends StatelessWidget {
- const MyApp({Key? key}) : super(key: key);
+  // ignore: prefer_const_constructors_in_immutables
+  MyApp({Key? key}) : super(key: key);
 
-
+ 
   @override
   Widget build(BuildContext context) {
     return  const MaterialApp(
@@ -25,15 +26,15 @@ class Inicio extends StatefulWidget {
 }
 
 class _InicioState extends State<Inicio> {
+  final llaveformulario = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
      body: cuerpo(context),
    );
   }
-}
-
-
+  
 Widget cuerpo(context){
 return Container(
   decoration: const BoxDecoration(
@@ -43,19 +44,25 @@ return Container(
   )
   ),
 child:  Center(
-  child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      nombre(),
-      cargoUsuario(),
-      campocontrasena(),
-      const SizedBox(height: 20,),
-      botonEntrar(context)
-    ],
+  child: Form(
+    key: llaveformulario,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        nombre(),
+        cargoUsuario(),
+        campocontrasena(),
+        const SizedBox(height: 20,),
+        botonEntrar(context)
+      ],
+    ),
   ),
 ),
 );
 }
+}
+
+
 
 
 Widget nombre(){
@@ -66,7 +73,14 @@ Widget nombre(){
 Widget cargoUsuario(){
   return Container(
     padding:const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-    child: const TextField(
+    child:  TextFormField(
+      validator:(texto){
+        if(texto=="deysi"){
+         
+        }
+        
+
+      },
     decoration: InputDecoration(
       hintText: "User",
       fillColor: Colors.white,
@@ -80,7 +94,10 @@ Widget cargoUsuario(){
 Widget campocontrasena(){
   return Container(
     padding:const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-    child: const TextField(
+    child: TextFormField(
+      validator:(texto){
+        
+      },
      obscureText: true,
      decoration: InputDecoration(
       hintText: "Password",
@@ -98,6 +115,7 @@ Widget botonEntrar(context){
     ), 
     child: const Text("Entrar"),
     onPressed: (){
+
     Navigator.push(context, MaterialPageRoute(builder: (context)=> const Pagina02() ),);
     
     
